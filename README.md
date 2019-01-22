@@ -1,2 +1,2 @@
 # code-snippets
-Many useful code fragment
+Many useful code fragments
