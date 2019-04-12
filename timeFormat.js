@@ -1,4 +1,3 @@
-```javascript
 /**
  * 计算时间段
  * @param {Number} time 当前时间戳（秒）
@@ -24,8 +23,7 @@ export function timePeriod(time) {
     return  Math.floor(diff / (3600 * 24 * 31 * 12)) + '年前';
   }
 }
-```
-```javascript
+
 /**
  * 持续时长
  * @param {Number} time 当前时间戳（秒）
@@ -59,4 +57,3 @@ function lastTimeFomat(time) {
   }
 }
 
-```
