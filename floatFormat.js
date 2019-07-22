@@ -15,6 +15,13 @@ export function formateFloat(num, count, retain) {
     }
     if (floatStr.length !== count) {
       let len = count - floatStr.length;
+      if (len < 0) {
+        floatStr = '';
+        for (let i = 0; i < count; i++) {
+          floatStr = floatStr + '0';
+        }
+        return [tmpArr[0]+1, floatStr].join('.');
+      }
       for (let i = 0; i < len; i++) {
         floatStr = '0' + floatStr;
       }
