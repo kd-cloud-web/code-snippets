@@ -7,11 +7,17 @@
 export function formateFloat(num, count, retain) {
   const tmpArr = num.toString().split('.');
   let floatArr = [], floatStr = '';
-  if (tmpArr[1]) { // 是小数
+  if (Number(tmpArr[1])) { // 是小数
     let tmpStr = tmpArr[1];
     floatStr = tmpStr.substring(0, count);
     if (tmpStr[count] >= 5) { // 四舍五入
-      floatStr = Number(floatStr)+1;
+      floatStr = (Number(floatStr)+1).toString();
+    }
+    if (floatStr.length !== count) {
+      let len = count - floatStr.length;
+      for (let i = 0; i < len; i++) {
+        floatStr = '0' + floatStr;
+      }
     }
     return [tmpArr[0], floatStr].join('.');
   } else { // 不是小数
